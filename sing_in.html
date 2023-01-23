@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>SIGN IN</title>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-dark bg-dark justify-content-between navv">
+            <a href="sing_in.html" class=" sign_in">SIGN IN <i class="fa-regular fa-user"></i></a>
+            <a class="navbar-brand" href="index.html">EZ Shop </a>
+            <span class="search-wrapper">
+                <label for="search"></label>
+                <input class="search" type="text" placeholder="Search Here" data-search>
+                <a class="srh-btn" href="#">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                </a>
+            </span>
+        </nav>
+    </header>
+
+    <main class="signInBgc">
+        <h1 class="h1Sign">SIGN IN</h1>
+        <div class="col-md-10 mx-auto h-50 w-50 col-lg-5 mt-4">
+            <form class="p-sm-2 rounded-3 bg-dark form" name="myForm">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control textsend email" id="floatingInput" onkeyup="success()"
+                        placeholder="name@example.com" autocomplete="off" required>
+                    <label for="floatingInput" name="email">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control password" id="floatingPassword" placeholder="Password"
+                        autocomplete="off" pattern="[A-Za-z]{5}" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="checkbox mb-3">
+                    <h6>Pasword must be at least 6 characters and contain letters and numbers</h6>
+                    <label>
+                        <input type="checkbox" value="remember-me">
+                        <p class="remember">Remember me</p>
+                    </label>
+                </div>
+                <button class="w-auto btn btn-sm btn-secondary" id="button" type="submit" disabled><a href="sing_in.html"
+                        class="abtn">Sign in</a></button>
+                <a href="register.html" class="register">
+                    <h5>Not a user yet? Click Here To Register Now!</h5>
+                </a>
+            </form>
+        </div>
+    </main>
+    <script>
+        const email = 'admin@email.com';
+        const password = 'admin';
+        function success() {
+            if (document.getElementsByClassName("textsend").value === "") {
+                document.getElementById('button').disabled = true;
+            } else {
+                document.getElementById('button').disabled = false;
+            }
+        }
+        function validate() {
+            const email = document.getElementsByClassName("email").value;
+            const password = document.getElementsByClassName("password").value;
+            if (email == 'admin@email.com' && password == 'admin1') {
+                alert("correct")
+                return false;
+            }else {
+                alert('incorrect')
+            }
+
+        }
+            
+    </script>
+
+    <script src="https://kit.fontawesome.com/b149192ab6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</body>
+
+</html>
