@@ -1,3 +1,4 @@
+console.log("if the website is not loading try turning your vpn off");
 const container = document.querySelector(".container");
 const carousel = document.querySelector(".carousel");
 const searchInput = document.querySelector("[data-search]");
@@ -21,7 +22,7 @@ function html(ele) {
   container.innerHTML += html;
   /* GETS NECESSARY INFO FOR CART */
   let products1 = {
-    img : ele.image,
+    img: ele.image,
     name: ele.title,
     tag: ele.id,
     price: ele.price,
@@ -63,7 +64,6 @@ setTimeout(() => {
   let carts = container.getElementsByClassName("add-cart");
 
   for (let i = 0; i < carts.length; i++) {
-    console.log("aps");
     carts[i].addEventListener("click", () => {
       cartNumbers(products[i]);
       totalcost(products[i]);
@@ -112,25 +112,19 @@ function setItems(product) {
     };
   }
 
-
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
   console.log(cartItems);
 }
 
 function totalcost(product) {
-
-
   let cartCost = localStorage.getItem("totalCost");
-  
+
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost + product.price);
   } else {
     localStorage.setItem("totalCost", product.price);
   }
-  
-
 }
-
 
 onLoadCardNumbers();
